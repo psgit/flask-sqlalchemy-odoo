@@ -2,8 +2,13 @@ from sqlalchemy import *
 from sqlalchemy.orm import (scoped_session, sessionmaker, relationship,
                             backref)
 from sqlalchemy.ext.declarative import declarative_base
+from configparser import ConfigParser
 
-engine = create_engine("postgresql+pg8000://postgres:postgres@localhost:5432/dev-odoo11", client_encoding='utf8')
+config = ConfigParser()
+config.readfp(open(r'db.cfg'))
+db_connect_string = config.get('Database', 'connect_string')
+
+engine = create_engine(db_connect_string, client_encoding='utf8')
 db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
                                          bind=engine))

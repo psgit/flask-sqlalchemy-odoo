@@ -7,7 +7,9 @@ Documentation : https://docs.graphene-python.org/projects/sqlalchemy/en/latest/t
 ## Starting the Application
 
 To start the app in Windows PowerShell, enter:
+```
   python app.py
+```
 
 ## Querying with GraphQL
 
@@ -18,6 +20,7 @@ In the browser, enter the following URL:
 
 #### Query All Partners
 
+```
   { 
     allPartners {
       edges {
@@ -28,9 +31,11 @@ In the browser, enter the following URL:
       }
     }
   }
+```
 
 #### Query All Users
 
+```
   {
     allUsers {
       edges {
@@ -44,3 +49,4 @@ In the browser, enter the following URL:
       }
     }
   }
+```
